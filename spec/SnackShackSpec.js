@@ -19,6 +19,7 @@ describe('SnackShack', function() {
   it('returns preparation time', function() {
     expect(snackshack.buy(1)).toEqual("1:30")
     expect(snackshack.buy(2)).toEqual("3:00")
+    expect(snackshack.buy(6000)).toEqual('9000:00')
   })
 
   it('assumes an order of 1 unless specified', function() {
