@@ -11,4 +11,12 @@ describe('SnackShack', function() {
   it('has an array for sandwich orders', function() {
     expect(snackshack.orders).toBeDefined()
   })
+
+  it('responds to buy command', function() {
+    expect(snackshack.buy).toBeDefined()
+  })
+
+  it('assumes an order of 1 unless specified', function() {
+    expect(snackshack.buy()).toEqual(1)
+  })
 })
