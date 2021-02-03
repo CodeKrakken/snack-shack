@@ -16,8 +16,12 @@ describe('SnackShack', function() {
     expect(snackshack.buy).toBeDefined()
   })
 
+  it('returns preparation time', function() {
+    expect(snackshack.buy(1)).toEqual("1:30")
+  })
+
   it('assumes an order of 1 unless specified', function() {
-    expect(snackshack.buy()).toEqual(1)
+    expect(snackshack.buy()).toEqual("1:30")
   })
 
   it('will only accept a positive integer order', function() {
@@ -26,7 +30,6 @@ describe('SnackShack', function() {
     expect(snackshack.buy('bumwag')).toEqual("Ey kid, I'm tryin' ta run a business!")
     expect(snackshack.buy(1.6)).toEqual("Ey kid, I'm tryin' ta run a business!")
     expect(snackshack.buy(true)).toEqual("Ey kid, I'm tryin' ta run a business!")
-
   })
 
 })
