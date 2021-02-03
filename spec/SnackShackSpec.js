@@ -19,4 +19,8 @@ describe('SnackShack', function() {
   it('assumes an order of 1 unless specified', function() {
     expect(snackshack.buy()).toEqual(1)
   })
+
+  it('will only accept a positive integer order', function() {
+    expect(snackshack.buy(0)).toEqual("Ey kid, I'm tryin' ta run a business!")
+  })
 })
