@@ -25,6 +25,13 @@ describe('SnackShack', function() {
                                     + "1:30 start making sandwich 2\n"
                                     + "2:30 serve sandwich 2\n"
                                     + "3:00 take a well earned break!")
+    expect(snackshack.buy(3)).toEqual("0:00 3 sandwich orders placed, start making sandwich 1\n"
+                                    + "1:00 serve sandwich 1\n"
+                                    + "1:30 start making sandwich 2\n"
+                                    + "2:30 serve sandwich 2\n"
+                                    + "3:00 start making sandwich 3\n"
+                                    + "4:00 serve sandwich 3\n"
+                                    + "4:30 take a well earned break!")
   })
 
   it('assumes an order of 1 unless specified', function() {
