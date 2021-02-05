@@ -51,4 +51,9 @@ describe('SnackShack', function() {
     expect(snackshack.buy(true)).toEqual("Ey kid, I'm tryin' ta run a business!")
   })
 
+  it('returns a correct estimate for an order when there is already a backlog', function() {
+    snackshack.backlog = 4
+    expect(snackshack.buy(4)).toEqual("12:00 til sandwichtime.")
+  })
+
 })
