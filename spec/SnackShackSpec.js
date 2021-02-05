@@ -12,6 +12,21 @@ describe('SnackShack', function() {
     expect(snackshack.buy).toBeDefined()
   })
 
+  it('responds to getSchedule command', function() {
+    expect(snackshack.getSchedule).toBeDefined()
+  })
+
+  it('returns a schedule after order', function() {
+    snackshack.buy(3)
+    expect(snackshack.getSchedule()).toEqual("0:00 3 sandwich orders placed, start making sandwich 1\n"
+                                    + "1:00 serve sandwich 1\n"
+                                    + "1:30 start making sandwich 2\n"
+                                    + "2:30 serve sandwich 2\n"
+                                    + "3:00 start making sandwich 3\n"
+                                    + "4:00 serve sandwich 3\n"
+                                    + "4:30 take a well earned break!")
+  })
+
   it('returns preparation time', function() {
     expect(snackshack.buy(1)).toEqual("0:00 1 sandwich order placed, start making sandwich 1\n"
                                     + "1:00 serve sandwich 1\n"
