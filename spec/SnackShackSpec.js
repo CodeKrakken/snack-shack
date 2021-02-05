@@ -8,10 +8,6 @@ describe('SnackShack', function() {
     snackshack = new SnackShack()
   })
 
-  it('has an array for sandwich orders', function() {
-    expect(snackshack.orders).toBeDefined()
-  })
-
   it('responds to buy command', function() {
     expect(snackshack.buy).toBeDefined()
   })
