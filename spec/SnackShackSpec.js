@@ -28,36 +28,17 @@ describe('SnackShack', function() {
   })
 
   it('returns preparation time', function() {
-    expect(snackshack.buy(1)).toEqual("0:00 1 sandwich order placed, start making sandwich 1\n"
-                                    + "1:00 serve sandwich 1\n"
-                                    + "1:30 take a well earned break!")
-    expect(snackshack.buy(2)).toEqual("0:00 2 sandwich orders placed, start making sandwich 1\n"
-                                    + "1:00 serve sandwich 1\n"
-                                    + "1:30 start making sandwich 2\n"
-                                    + "2:30 serve sandwich 2\n"
-                                    + "3:00 take a well earned break!")
-    expect(snackshack.buy(3)).toEqual("0:00 3 sandwich orders placed, start making sandwich 1\n"
-                                    + "1:00 serve sandwich 1\n"
-                                    + "1:30 start making sandwich 2\n"
-                                    + "2:30 serve sandwich 2\n"
-                                    + "3:00 start making sandwich 3\n"
-                                    + "4:00 serve sandwich 3\n"
-                                    + "4:30 take a well earned break!")
-    expect(snackshack.buy(4)).toEqual("0:00 4 sandwich orders placed, start making sandwich 1\n"
-                                    + "1:00 serve sandwich 1\n"
-                                    + "1:30 start making sandwich 2\n"
-                                    + "2:30 serve sandwich 2\n"
-                                    + "3:00 start making sandwich 3\n"
-                                    + "4:00 serve sandwich 3\n"
-                                    + "4:30 start making sandwich 4\n"
-                                    + "5:30 serve sandwich 4\n"
-                                    + "6:00 take a well earned break!")
+    expect(snackshack.buy(1)).toEqual("1:30 til sandwichtime.")
+    snackshack.backlog = 0
+    expect(snackshack.buy(2)).toEqual("3:00 til sandwichtime.")
+    snackshack.backlog = 0
+    expect(snackshack.buy(3)).toEqual("4:30 til sandwichtime.")
+    snackshack.backlog = 0
+    expect(snackshack.buy(4)).toEqual("6:00 til sandwichtime.")
   })
 
   it('assumes an order of 1 unless specified', function() {
-    expect(snackshack.buy()).toEqual("0:00 1 sandwich order placed, start making sandwich 1\n"
-                                   + "1:00 serve sandwich 1\n"
-                                   + "1:30 take a well earned break!")
+    expect(snackshack.buy()).toEqual("1:30 til sandwichtime.")
   })
 
   it('will only accept a positive integer order', function() {
