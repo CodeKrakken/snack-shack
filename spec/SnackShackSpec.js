@@ -62,6 +62,8 @@ describe('SnackShack', function() {
 
     it('updates schedule correctly when new order received', function() {
       snackshack.buy(4)
+      console.log(snackshack.getSchedule())
+      snackshack.buy(4)
       expect(snackshack.getSchedule()).toEqual("0:00 4 sandwich orders placed, start making sandwich 1\n"
                                              + "1:00 serve sandwich 1\n"
                                              + "1:30 start making sandwich 2\n"
