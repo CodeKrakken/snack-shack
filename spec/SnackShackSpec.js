@@ -51,37 +51,8 @@ describe('SnackShack', function() {
     expect(snackshack.buy(true)).toEqual("Ey kid, I'm tryin' ta run a business!")
   })
 
-  describe('with existent backlog', function() {
-    beforeEach(function() {
-      snackshack.backlog = 4
-    })
-
-    it('returns a correct estimate for an order when there is already a backlog', function() {
-      expect(snackshack.buy(4)).toEqual("12:00 til sandwichtime.")
-    })
-
-    it('updates schedule correctly when new order received', function() {
-      snackshack.buy(4)
-      console.log(snackshack.getSchedule())
-      snackshack.buy(4)
-      expect(snackshack.getSchedule()).toEqual("0:00 4 sandwich orders placed, start making sandwich 1\n"
-                                             + "1:00 serve sandwich 1\n"
-                                             + "1:30 start making sandwich 2\n"
-                                             + "2:30 serve sandwich 2\n"
-                                             + "3:00 start making sandwich 3\n"
-                                             + "4:00 serve sandwich 3\n"
-                                             + "4:30 start making sandwich 4\n"
-                                             + "5:30 serve sandwich 4\n"
-                                             + "6:00 4 sandwich orders placed, start making sandwich 5\n"
-                                             + "7:00 serve sandwich 5\n"
-                                             + "7:30 start making sandwich 6\n"
-                                             + "8:30 serve sandwich 6\n"
-                                             + "9:00 start making sandwich 7\n"
-                                             + "10:00 serve sandwich 7\n"
-                                             + "10:30 start making sandwich 8\n"
-                                             + "11:30 serve sandwich 8\n"
-                                             + "12:00 take a well earned break!")
-    })
+  it('returns a correct estimate for an order when there is already a backlog', function() {
+    snackshack.backlog = 4
+    expect(snackshack.buy(4)).toEqual("12:00 til sandwichtime.")
   })
-
 })
