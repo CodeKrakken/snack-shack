@@ -64,4 +64,8 @@ describe('SnackShack', function() {
     snackshack.backlog = 6
     expect(snackshack.buy(1)).toEqual("Sorry, the wait will be too long.")
   })
+
+  it('has a limited inventory', function() {
+    expect(snackshack.inventory).toBeDefined()
+  })
 })
