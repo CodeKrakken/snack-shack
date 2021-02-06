@@ -77,4 +77,12 @@ describe('SnackShack', function() {
     snackshack.buy(5)
     expect(snackshack.inventory).toEqual(40)
   })
+
+  it('rejects orders when inventory cannot handle them', function() {
+    for(let i=0;i<7;i++) {
+      snackshack.buy(6)
+      snackshack.backlog = 0
+    }
+    expect(snackshack.buy(6)).toEqual('Sorry, not enough sandwiches!')
+  })
 })
