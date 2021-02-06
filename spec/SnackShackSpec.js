@@ -59,4 +59,9 @@ describe('SnackShack', function() {
   it('refuses orders that will take more than 10 minutes to serve', function() {
     expect(snackshack.buy(7)).toEqual("Sorry, the wait will be too long.")
   })
+
+  it('takes backlog into account when deciding if wait will be too long', function() {
+    snackshack.backlog = 6
+    expect(snackshack.buy(1)).toEqual("Sorry, the wait will be too long.")
+  })
 })
