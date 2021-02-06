@@ -72,4 +72,9 @@ describe('SnackShack', function() {
   it('has an inventory of 45', function() {
     expect(snackshack.inventory).toEqual(45)
   })
+
+  it('reduces its inventory when a sandwich is purchased', function() {
+    snackshack.buy(5)
+    expect(snackshack.inventory).toEqual(40)
+  })
 })
