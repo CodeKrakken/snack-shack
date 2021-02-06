@@ -68,4 +68,8 @@ describe('SnackShack', function() {
   it('has a limited inventory', function() {
     expect(snackshack.inventory).toBeDefined()
   })
+
+  it('has an inventory of 45', function() {
+    expect(snackshack.inventory).toEqual(45)
+  })
 })
